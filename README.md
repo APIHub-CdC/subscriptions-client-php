@@ -116,16 +116,6 @@ $this->signer = new KeyHandler(
 
 ```php
 ...
-
-...
- ```
- 
-### Paso 3. Capturar los datos y realizar la petición
-
-> **NOTA:** Los datos de la siguiente petición son solo representativos.
-
-```php
-...
 public function setUp(): void
 {
     $this->username = "your_circulodecredito_username";
@@ -154,6 +144,37 @@ public function setUp(): void
     ]);
 }
 ...
+ ```
+ 
+### Paso 3. Capturar los datos y realizar la petición
+
+> **NOTA:** Los datos de la siguiente petición son solo representativos.
+
+```php
+...
+public function testCreateNewSubscription()
+{
+    try {
+        $body = new Subscription();
+        $body->setWebHookUrl("https://your-webhook-url");
+        $body->setEnrollmentId($this->uuid());
+        $body->setEventType("");
+
+        $x_webhook_jwt_auth = $this->webhookToken->generateJwtAuth("your-webhook-user", "your-webhook-password");
+
+        $api = new WebhookSubscriptionApi($this->httpClient, $this->config);
+        $response = $api->createNewSubscription($this->apiKey, $this->username, $this->password, $x_webhook_jwt_auth, $body);
+
+        print ("[INFO  ]HTTP Response body:\n $response");
+
+    } catch  (ApiException $exception)  {
+        print("\nThe HTTP request failed, an error occurred: ".($exception->getMessage()));
+        print("\n".$exception->getResponseObject());
+    }
+
+    $this->assertNotNull($response);
+}
+...
 ```
 
 ## Pruebas unitarias
@@ -162,28 +183,6 @@ Deshabilita la ejecución de algún método test agregando la anotación **`@gro
 
 ```php
 ...
-public function testCreateNewSubscription()
-    {
-        try {
-            $body = new Subscription();
-            $body->setWebHookUrl("https://your-webhook-url");
-            $body->setEnrollmentId($this->uuid());
-            $body->setEventType("");
-
-            $x_webhook_jwt_auth = $this->webhookToken->generateJwtAuth("your-webhook-user", "your-webhook-password");
-
-            $api = new WebhookSubscriptionApi($this->httpClient, $this->config);
-            $response = $api->createNewSubscription($this->apiKey, $this->username, $this->password, $x_webhook_jwt_auth, $body);
-
-            print ("[INFO  ]HTTP Response body:\n $response");
-
-        } catch  (ApiException $exception)  {
-            print("\nThe HTTP request failed, an error occurred: ".($exception->getMessage()));
-            print("\n".$exception->getResponseObject());
-        }
-    
-        $this->assertNotNull($response);
-    }
 
 /**
  * 
