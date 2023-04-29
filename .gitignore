@@ -1,4 +1,4 @@
-# CakePHP 3
+# PHP
 
 /vendor/*
 /config/app.php
@@ -17,9 +17,39 @@
 /logs/*
 !/logs/empty
 
-# CakePHP 2
+# PHP 2
 
 /app/tmp/*
 /app/Config/core.php
 /app/Config/database.php
 /vendors/*
+
+.*
+*~
+nbproject
+nb-configuration.xml
+Session.vim
+*.tmproj
+*.tmproject
+.DS_Store
+tmtags
+Thumbs.db
+Desktop.ini
+# ignore Composer downloads
+/vendor
+# keep some hiddens
+!.htaccess
+!/.gitignore
+.travis.yml
+# ignore keys
+
+lib/Interceptor/*.p12
+lib/Interceptor/*.pem
+
+##### Composer
+composer.phar
+/vendor/
+
+# Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
+# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
+composer.lock
