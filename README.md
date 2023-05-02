@@ -146,7 +146,7 @@ public function setUp(): void
 ...
  ```
  
-### Paso 3. Capturar los datos y realizar la petición
+### Paso 5. Capturar los datos y realizar la petición
 
 > **NOTA:** Los datos de la siguiente petición son solo representativos.
 
