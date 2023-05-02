@@ -68,31 +68,23 @@ openssl pkcs12 -name ${ALIAS} \
 
 ### Paso 2. Cargar el certificado dentro del portal de desarrolladores
 
- 1. Iniciar sesión.
- 2. Dar clic en la sección "**Mis aplicaciones**".
- 3. Seleccionar la aplicación.
- 4. Ir a la pestaña de "**Certificados para @tuApp**".
-    <p align="center">
-      <img src="https://github.com/APIHub-CdC/imagenes-cdc/blob/master/applications.png">
-    </p>
- 5. Al abrirse la ventana, seleccionar el certificado previamente creado y dar clic en el botón "**Cargar**":
-    <p align="center">
-      <img src="https://github.com/APIHub-CdC/imagenes-cdc/blob/master/upload_cert.png">
-    </p>
+ 1. Iniciar sesión, da clic en la esquina superior derecha donde se encuentra el texto "Iniciar sesión".
+ 2. Ingresa tu usuario y contraseña para iniciar sesión en el portal.
+ 3. Una vez iniciada la sesión exitasamente, en la esquina superior derecha, dar clic en "**Mi cuenta**" esto desplegará un sub-menú, dar clic en la opción "**Apps**".
+ 4. Selecciona la applicación deseada o crea una nueva.
+ 5. Una vez seleccionada la aplicación deseada, al final de la pantalla se encuenta un botón con la leyenda "**Certificados**" dar clic.
+ 6. Cargar/subir el certificado público generado en el paso 1.
 
 ### Paso 3. Descargar el certificado de Círculo de Crédito dentro del portal de desarrolladores
 
- 1. Iniciar sesión.
- 2. Dar clic en la sección "**Mis aplicaciones**".
- 3. Seleccionar la aplicación.
- 4. Ir a la pestaña de "**Certificados para @tuApp**".
-    <p align="center">
-        <img src="https://github.com/APIHub-CdC/imagenes-cdc/blob/master/applications.png">
-    </p>
- 5. Al abrirse la ventana, dar clic al botón "**Descargar**":
-    <p align="center">
-        <img src="https://github.com/APIHub-CdC/imagenes-cdc/blob/master/download_cert.png">
-    </p>
+ 1. Iniciar sesión, da clic en la esquina superior derecha donde se encuentra el texto "Iniciar sesión".
+ 2. Ingresa tu usuario y contraseña para iniciar sesión en el portal.
+ 3. Una vez iniciada la sesión exitasamente, en la esquina superior derecha, dar clic en "**Mi cuenta**" esto desplegará un sub-menú, dar clic en la opción "**Apps**".
+ 4. Selecciona la applicación deseada o crea una nueva.
+ 5. Una vez seleccionada la aplicación deseada, al final de la pantalla se encuenta un botón con la leyenda "**Certificados**" dar clic.
+ 6. Descargar el certificado público de Círculo de Crédito.
+ 
+
  > Es importante que este contenedor sea almacenado en la siguiente ruta:
  > **/path/to/repository/lib/Interceptor/keypair.p12**
  >
